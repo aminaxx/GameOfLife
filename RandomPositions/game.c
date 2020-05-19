@@ -1,6 +1,17 @@
+/**
+* @file         game.c
+* @brief        game
+* @detail       Source code of Conway's Game Of Life
+* @include      func.h
+*/
 #include "func.h"
+#include <SDL2/SDL.h>
 
-void generate(){ // Generates the table based on the selected capacity level
+/**
+* @fn     		generate
+* @brief        Generates the table based on the selected capacity level
+*/
+void generate(){
     int life;
 	for (int j=0;j<heigh;j++){
 		for(int i=0;i<width;i++){
@@ -14,46 +25,18 @@ void generate(){ // Generates the table based on the selected capacity level
 	}
 }
 
-void display(char world[width][heigh]){ //Prints the next world on screen
+/**
+* @fn 		   display
+* @brief       Prints the next world(table) on screen
+*/
+void display(char world[width][heigh]){
 
 	for (int j = 0; j < heigh; j++){
 		for(int i = 0 ;i < width; i++){
-			printf("\033[31m%c", world[i][j]);                   //isleyen part, asagidakilar draftdi, bax gor neyniyirsen <3
+			printf("\033[31m%c", world[i][j]);                  
 		}
 		printf("\n");
 	}
-
-    
-		
-	// // printf("\033[2J");
-	// // printf("\033[?25l");
-    // for (int j = 0; j < heigh; j++){
-    //     printf("\033[4H");
-	// 	for(int i = 0 ;i < width; i++){
-	// 		int c = (world[i][j] != 0) ? 40 : 104 ;
-    //         printf("\033[%dm  ",c);
-	// 	}
-	// 	printf("\n");
-	// }
-	// int s,si;
-
-
-// // for(s=0;s<heigh;s++){
-// // 	printf("\033[%d;4H",s+2);
-// // 	for(si=0;si<width;si++){
-		
-// // 		//struct cell temp=C_new(s,si);
-// // 		//arr[s][si]=temp;
-// // 		//printf("0or 1");
-// // 		//scanf("%d",&(temp.mode));
-// // 		// int c = (world[s][si] != 0) ? 40 : 104 ;
-// //         int c = (world[s][si]);
-// // 		//int c =  ? 40 : 104;
-// // 			printf("\033[%dm  ",c);
-// // }	
-// // }
-
-
 }
 
 void rules(int b, int c, char table1[width][heigh], char tableN[width][heigh]){ // Checks how many living neighbors this tile currently has.
@@ -63,23 +46,53 @@ void rules(int b, int c, char table1[width][heigh], char tableN[width][heigh]){ 
 			if ((i == 0 && j == 0) || b + i >= width || b + i < 0 || c + j >= heigh	|| c + j < 0) { //either in current cell or neightb.
 				continue;	
 			}
-
-			if (table1[b + i][c + j] == '0'){ //if cell is alive
+/**       
+*@brief     if cell is alive
+*/
+			if (table1[b + i][c + j] == '0'){
                 neighbors++;
             }
 		} 
 	}
 	
-//due to the rules
+/**
+* @brief       Due to the rules
+*/
 	if (neighbors == 3 || (neighbors == 2 && table1[b][c] == '0')) { //Any live cell with two or three live neighbors survives.
 		tableN[b][c] = '0';
 	} else {
 		tableN[b][c] = ' ';
 	}
-
-    // if (neighbors == 3 || table1[b][c] == ' ') {//Any dead cell with three live neighbors becomes a live cell.
+/**
+* @brief       Not generating properly with iy
+*/	
+ 	//    if (neighbors == 3 || table1[b][c] == ' ') {//Any dead cell with three live neighbors becomes a live cell.
 	// 	tableN[b][c] = '0';
 	// } else {
 	// 	tableN[b][c] = ' ';
 	// }
 }
+
+
+/**
+* @brief   SDL2
+* @detail  I've tried to generate the game with sdl but got the error with cmake, thus commented to left the clear worked code
+*/
+
+// void renderGrid(int *grid, SDL_Renderer *renderer, SDL_Texture *aliveTexture,
+//                 SDL_Texture *deadTexture) {
+//   for (int r = 0; r < heigh; r++) {
+//     for (int c = 0; c < width; c++) {
+//       SDL_Rect quad = {c * CELL_SIZE, r * CELL_SIZE, CELL_SIZE, CELL_SIZE};
+//       SDL_RenderCopy(renderer,
+//                      grid[r * COLUMNS + c] ? aliveTexture : deadTexture, NULL,
+//                      &quad);
+//     }
+//   }
+// }
+
+// void clearGrid(int *grid) {
+//   for (int i = 0; i < heigh * width; i++) {
+//     grid[i] = 0;
+//   }
+// }

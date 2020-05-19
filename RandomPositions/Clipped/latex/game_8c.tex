@@ -1,0 +1,146 @@
+\hypertarget{game_8c}{}\section{game.\+c File Reference}
+\label{game_8c}\index{game.\+c@{game.\+c}}
+
+
+game  Source code of Conway\textquotesingle{}s Game Of Life  
+
+
+{\ttfamily \#include \char`\"{}func.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$S\+D\+L2/\+S\+D\+L.\+h$>$}\newline
+Include dependency graph for game.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{game_8c__incl}
+\end{center}
+\end{figure}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{game_8c_a3c01631a4116e8810c6c1021d7110ab7}{generate} ()
+\begin{DoxyCompactList}\small\item\em Generates the table based on the selected capacity level. \end{DoxyCompactList}\item 
+void \hyperlink{game_8c_a197169219893d60d8a36183dbf608f34}{display} (char world\mbox{[}\hyperlink{func_8h_a667b04d7fb6ef46db4da4af554c5b6f7}{width}\mbox{]}\mbox{[}\hyperlink{func_8h_a17e3571785d83b356acc573fc7fbdaea}{heigh}\mbox{]})
+\item 
+void \hyperlink{game_8c_a05759d69554b6fd2f453d6ee11a7816b}{rules} (int b, int c, char table1\mbox{[}\hyperlink{func_8h_a667b04d7fb6ef46db4da4af554c5b6f7}{width}\mbox{]}\mbox{[}\hyperlink{func_8h_a17e3571785d83b356acc573fc7fbdaea}{heigh}\mbox{]}, char tableN\mbox{[}\hyperlink{func_8h_a667b04d7fb6ef46db4da4af554c5b6f7}{width}\mbox{]}\mbox{[}\hyperlink{func_8h_a17e3571785d83b356acc573fc7fbdaea}{heigh}\mbox{]})
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+game  Source code of Conway\textquotesingle{}s Game Of Life 
+
+
+\begin{DoxyCodeInclude}
+\end{DoxyCodeInclude}
+ 
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{game_8c_a197169219893d60d8a36183dbf608f34}\label{game_8c_a197169219893d60d8a36183dbf608f34}} 
+\index{game.\+c@{game.\+c}!display@{display}}
+\index{display@{display}!game.\+c@{game.\+c}}
+\subsubsection{\texorpdfstring{display()}{display()}}
+{\footnotesize\ttfamily void display (\begin{DoxyParamCaption}\item[{char}]{world\mbox{[}width\mbox{]}\mbox{[}heigh\mbox{]} }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}
+32                                       \{
+33 
+34     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} j = 0; j < \hyperlink{func_8h_a17e3571785d83b356acc573fc7fbdaea}{heigh}; j++)\{
+35         \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i = 0 ;i < \hyperlink{func_8h_a667b04d7fb6ef46db4da4af554c5b6f7}{width}; i++)\{
+36             printf(\textcolor{stringliteral}{"\(\backslash\)033[31m%c"}, world[i][j]);                  
+37         \}
+38         printf(\textcolor{stringliteral}{"\(\backslash\)n"});
+39     \}
+40 \}
+\end{DoxyCode}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=201pt]{game_8c_a197169219893d60d8a36183dbf608f34_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{game_8c_a3c01631a4116e8810c6c1021d7110ab7}\label{game_8c_a3c01631a4116e8810c6c1021d7110ab7}} 
+\index{game.\+c@{game.\+c}!generate@{generate}}
+\index{generate@{generate}!game.\+c@{game.\+c}}
+\subsubsection{\texorpdfstring{generate()}{generate()}}
+{\footnotesize\ttfamily void generate (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Generates the table based on the selected capacity level. 
+
+
+\begin{DoxyCode}
+14                \{
+15     \textcolor{keywordtype}{int} life;
+16     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} j=0;j<\hyperlink{func_8h_a17e3571785d83b356acc573fc7fbdaea}{heigh};j++)\{
+17         \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i=0;i<\hyperlink{func_8h_a667b04d7fb6ef46db4da4af554c5b6f7}{width};i++)\{
+18             life=(rand()%9);
+19             \textcolor{keywordflow}{if} (life<\hyperlink{func_8h_adbe66a087ac3fd4a5b0566f64ca2d12b}{capacity}) \{
+20                 \hyperlink{func_8h_a8bde76600e70fb4f2d289ab5a27c1d39}{table\_t}[i][j]=\textcolor{charliteral}{'0'};
+21             \}
+22             \textcolor{keywordflow}{else}\{ \hyperlink{func_8h_a8bde76600e70fb4f2d289ab5a27c1d39}{table\_t}[i][j]=\textcolor{charliteral}{' '};
+23             \}
+24         \}
+25     \}
+26 \}
+\end{DoxyCode}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=208pt]{game_8c_a3c01631a4116e8810c6c1021d7110ab7_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{game_8c_a05759d69554b6fd2f453d6ee11a7816b}\label{game_8c_a05759d69554b6fd2f453d6ee11a7816b}} 
+\index{game.\+c@{game.\+c}!rules@{rules}}
+\index{rules@{rules}!game.\+c@{game.\+c}}
+\subsubsection{\texorpdfstring{rules()}{rules()}}
+{\footnotesize\ttfamily void rules (\begin{DoxyParamCaption}\item[{int}]{b,  }\item[{int}]{c,  }\item[{char}]{table1\mbox{[}width\mbox{]}\mbox{[}heigh\mbox{]},  }\item[{char}]{tableN\mbox{[}width\mbox{]}\mbox{[}heigh\mbox{]} }\end{DoxyParamCaption})}
+
+if cell is alive
+
+Due to the rules
+
+Not generating properly with iy
+\begin{DoxyCode}
+42                                                                               \{ \textcolor{comment}{// Checks how many living
+       neighbors this tile currently has.}
+43     \textcolor{keywordtype}{int} neighbors = 0;
+44     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = -1; i <= 1; i++) \{
+45         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} j = -1; j <= 1; j++) \{
+46             \textcolor{keywordflow}{if} ((i == 0 && j == 0) || b + i >= \hyperlink{func_8h_a667b04d7fb6ef46db4da4af554c5b6f7}{width} || b + i < 0 || c + j >= 
+      \hyperlink{func_8h_a17e3571785d83b356acc573fc7fbdaea}{heigh}  || c + j < 0) \{ \textcolor{comment}{//either in current cell or neightb.}
+47                 \textcolor{keywordflow}{continue};   
+48             \}
+52             \textcolor{keywordflow}{if} (table1[b + i][c + j] == \textcolor{charliteral}{'0'})\{
+53                 neighbors++;
+54             \}
+55         \} 
+56     \}
+57     
+61     \textcolor{keywordflow}{if} (neighbors == 3 || (neighbors == 2 && table1[b][c] == \textcolor{charliteral}{'0'})) \{ \textcolor{comment}{//Any live cell with two or three live
+       neighbors survives.}
+62         tableN[b][c] = \textcolor{charliteral}{'0'};
+63     \} \textcolor{keywordflow}{else} \{
+64         tableN[b][c] = \textcolor{charliteral}{' '};
+65     \}
+69     \textcolor{comment}{//    if (neighbors == 3 || table1[b][c] == ' ') \{//Any dead cell with three live neighbors becomes a
+       live cell.}
+70     \textcolor{comment}{//  tableN[b][c] = '0';}
+71     \textcolor{comment}{// \} else \{}
+72     \textcolor{comment}{//  tableN[b][c] = ' ';}
+73     \textcolor{comment}{// \}}
+74 \}
+\end{DoxyCode}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=192pt]{game_8c_a05759d69554b6fd2f453d6ee11a7816b_icgraph}
+\end{center}
+\end{figure}

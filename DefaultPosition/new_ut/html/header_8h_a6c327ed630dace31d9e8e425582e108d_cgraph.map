@@ -1,0 +1,10 @@
+<map id="decide_mode" name="decide_mode">
+<area shape="rect" id="node2" href="$copy3_8c.html#a3aadcb56a2f134e41956c53b842bec26" title="getTop" alt="" coords="177,5,240,32"/>
+<area shape="rect" id="node3" href="$copy3_8c.html#acc83eb0a16438c547c4f9aed14ff4bf7" title="getBottom" alt="" coords="167,56,250,83"/>
+<area shape="rect" id="node4" href="$copy3_8c.html#afad19d261e76cadcd2b9831a5706c8a2" title="getLeft" alt="" coords="177,107,240,133"/>
+<area shape="rect" id="node5" href="$copy3_8c.html#a27968fd21d12b0c5ab6e1189dec7caf5" title="getRight" alt="" coords="173,157,244,184"/>
+<area shape="rect" id="node6" href="$copy3_8c.html#ac8d971e82d7c531e53702e9befcea21b" title="getLeftTop" alt="" coords="167,208,251,235"/>
+<area shape="rect" id="node7" href="$copy3_8c.html#a1985e56feea73524e5a12cbd3fa1ad32" title="getRightTop" alt="" coords="162,259,255,285"/>
+<area shape="rect" id="node8" href="$copy3_8c.html#a137f29da133be5dfa40bced8da6211cb" title="getLeftBottom" alt="" coords="157,309,261,336"/>
+<area shape="rect" id="node9" href="$copy3_8c.html#a27da2e315e9f2ba32885d860f5f3dbea" title="getRightBottom" alt="" coords="152,360,265,387"/>
+</map>

@@ -1,0 +1,198 @@
+\hypertarget{func_8h}{}\section{func.\+h File Reference}
+\label{func_8h}\index{func.\+h@{func.\+h}}
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$unistd.\+h$>$}\newline
+{\ttfamily \#include $<$time.\+h$>$}\newline
+{\ttfamily \#include $<$S\+D\+L2/\+S\+D\+L.\+h$>$}\newline
+{\ttfamily \#include $<$S\+D\+L2/\+S\+D\+L\+\_\+image.\+h$>$}\newline
+{\ttfamily \#include $<$S\+D\+L2/\+S\+D\+L\+\_\+timer.\+h$>$}\newline
+Include dependency graph for func.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{func_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=194pt]{func_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{func_8h_a17e3571785d83b356acc573fc7fbdaea}{heigh}~30
+\item 
+\#define \hyperlink{func_8h_a667b04d7fb6ef46db4da4af554c5b6f7}{width}~80
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{func_8h_a913873cf89f388d70a28de0b77d68884}{generate} ()
+\begin{DoxyCompactList}\small\item\em Generates the table based on the selected capacity level. \end{DoxyCompactList}\item 
+void \hyperlink{func_8h_a197169219893d60d8a36183dbf608f34}{display} (char world\mbox{[}\hyperlink{func_8h_a667b04d7fb6ef46db4da4af554c5b6f7}{width}\mbox{]}\mbox{[}\hyperlink{func_8h_a17e3571785d83b356acc573fc7fbdaea}{heigh}\mbox{]})
+\item 
+void \hyperlink{func_8h_a05759d69554b6fd2f453d6ee11a7816b}{rules} (int b, int c, char table1\mbox{[}\hyperlink{func_8h_a667b04d7fb6ef46db4da4af554c5b6f7}{width}\mbox{]}\mbox{[}\hyperlink{func_8h_a17e3571785d83b356acc573fc7fbdaea}{heigh}\mbox{]}, char tableN\mbox{[}\hyperlink{func_8h_a667b04d7fb6ef46db4da4af554c5b6f7}{width}\mbox{]}\mbox{[}\hyperlink{func_8h_a17e3571785d83b356acc573fc7fbdaea}{heigh}\mbox{]})
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{func_8h_adbe66a087ac3fd4a5b0566f64ca2d12b}{capacity}
+\item 
+char \hyperlink{func_8h_a8bde76600e70fb4f2d289ab5a27c1d39}{table\+\_\+t} \mbox{[}\hyperlink{func_8h_a667b04d7fb6ef46db4da4af554c5b6f7}{width}\mbox{]}\mbox{[}\hyperlink{func_8h_a17e3571785d83b356acc573fc7fbdaea}{heigh}\mbox{]}
+\item 
+char \hyperlink{func_8h_af978b09d0f2fdfc6fd0f6f4006c71fcb}{table\+\_\+N} \mbox{[}\hyperlink{func_8h_a667b04d7fb6ef46db4da4af554c5b6f7}{width}\mbox{]}\mbox{[}\hyperlink{func_8h_a17e3571785d83b356acc573fc7fbdaea}{heigh}\mbox{]}
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\mbox{\Hypertarget{func_8h_a17e3571785d83b356acc573fc7fbdaea}\label{func_8h_a17e3571785d83b356acc573fc7fbdaea}} 
+\index{func.\+h@{func.\+h}!heigh@{heigh}}
+\index{heigh@{heigh}!func.\+h@{func.\+h}}
+\subsubsection{\texorpdfstring{heigh}{heigh}}
+{\footnotesize\ttfamily \#define heigh~30}
+
+\mbox{\Hypertarget{func_8h_a667b04d7fb6ef46db4da4af554c5b6f7}\label{func_8h_a667b04d7fb6ef46db4da4af554c5b6f7}} 
+\index{func.\+h@{func.\+h}!width@{width}}
+\index{width@{width}!func.\+h@{func.\+h}}
+\subsubsection{\texorpdfstring{width}{width}}
+{\footnotesize\ttfamily \#define width~80}
+
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{func_8h_a197169219893d60d8a36183dbf608f34}\label{func_8h_a197169219893d60d8a36183dbf608f34}} 
+\index{func.\+h@{func.\+h}!display@{display}}
+\index{display@{display}!func.\+h@{func.\+h}}
+\subsubsection{\texorpdfstring{display()}{display()}}
+{\footnotesize\ttfamily void display (\begin{DoxyParamCaption}\item[{char}]{world\mbox{[}width\mbox{]}\mbox{[}heigh\mbox{]} }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}
+32                                       \{
+33 
+34     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} j = 0; j < \hyperlink{func_8h_a17e3571785d83b356acc573fc7fbdaea}{heigh}; j++)\{
+35         \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i = 0 ;i < \hyperlink{func_8h_a667b04d7fb6ef46db4da4af554c5b6f7}{width}; i++)\{
+36             printf(\textcolor{stringliteral}{"\(\backslash\)033[31m%c"}, world[i][j]);                  
+37         \}
+38         printf(\textcolor{stringliteral}{"\(\backslash\)n"});
+39     \}
+40 \}
+\end{DoxyCode}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=201pt]{func_8h_a197169219893d60d8a36183dbf608f34_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{func_8h_a913873cf89f388d70a28de0b77d68884}\label{func_8h_a913873cf89f388d70a28de0b77d68884}} 
+\index{func.\+h@{func.\+h}!generate@{generate}}
+\index{generate@{generate}!func.\+h@{func.\+h}}
+\subsubsection{\texorpdfstring{generate()}{generate()}}
+{\footnotesize\ttfamily generate (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Generates the table based on the selected capacity level. 
+
+
+\begin{DoxyCode}
+14                \{
+15     \textcolor{keywordtype}{int} life;
+16     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} j=0;j<\hyperlink{func_8h_a17e3571785d83b356acc573fc7fbdaea}{heigh};j++)\{
+17         \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i=0;i<\hyperlink{func_8h_a667b04d7fb6ef46db4da4af554c5b6f7}{width};i++)\{
+18             life=(rand()%9);
+19             \textcolor{keywordflow}{if} (life<\hyperlink{func_8h_adbe66a087ac3fd4a5b0566f64ca2d12b}{capacity}) \{
+20                 \hyperlink{func_8h_a8bde76600e70fb4f2d289ab5a27c1d39}{table\_t}[i][j]=\textcolor{charliteral}{'0'};
+21             \}
+22             \textcolor{keywordflow}{else}\{ \hyperlink{func_8h_a8bde76600e70fb4f2d289ab5a27c1d39}{table\_t}[i][j]=\textcolor{charliteral}{' '};
+23             \}
+24         \}
+25     \}
+26 \}
+\end{DoxyCode}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=208pt]{func_8h_a913873cf89f388d70a28de0b77d68884_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{func_8h_a05759d69554b6fd2f453d6ee11a7816b}\label{func_8h_a05759d69554b6fd2f453d6ee11a7816b}} 
+\index{func.\+h@{func.\+h}!rules@{rules}}
+\index{rules@{rules}!func.\+h@{func.\+h}}
+\subsubsection{\texorpdfstring{rules()}{rules()}}
+{\footnotesize\ttfamily void rules (\begin{DoxyParamCaption}\item[{int}]{b,  }\item[{int}]{c,  }\item[{char}]{table1\mbox{[}width\mbox{]}\mbox{[}heigh\mbox{]},  }\item[{char}]{tableN\mbox{[}width\mbox{]}\mbox{[}heigh\mbox{]} }\end{DoxyParamCaption})}
+
+if cell is alive
+
+Due to the rules
+
+Not generating properly with iy
+\begin{DoxyCode}
+42                                                                               \{ \textcolor{comment}{// Checks how many living
+       neighbors this tile currently has.}
+43     \textcolor{keywordtype}{int} neighbors = 0;
+44     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = -1; i <= 1; i++) \{
+45         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} j = -1; j <= 1; j++) \{
+46             \textcolor{keywordflow}{if} ((i == 0 && j == 0) || b + i >= \hyperlink{func_8h_a667b04d7fb6ef46db4da4af554c5b6f7}{width} || b + i < 0 || c + j >= 
+      \hyperlink{func_8h_a17e3571785d83b356acc573fc7fbdaea}{heigh}  || c + j < 0) \{ \textcolor{comment}{//either in current cell or neightb.}
+47                 \textcolor{keywordflow}{continue};   
+48             \}
+52             \textcolor{keywordflow}{if} (table1[b + i][c + j] == \textcolor{charliteral}{'0'})\{
+53                 neighbors++;
+54             \}
+55         \} 
+56     \}
+57     
+61     \textcolor{keywordflow}{if} (neighbors == 3 || (neighbors == 2 && table1[b][c] == \textcolor{charliteral}{'0'})) \{ \textcolor{comment}{//Any live cell with two or three live
+       neighbors survives.}
+62         tableN[b][c] = \textcolor{charliteral}{'0'};
+63     \} \textcolor{keywordflow}{else} \{
+64         tableN[b][c] = \textcolor{charliteral}{' '};
+65     \}
+69     \textcolor{comment}{//    if (neighbors == 3 || table1[b][c] == ' ') \{//Any dead cell with three live neighbors becomes a
+       live cell.}
+70     \textcolor{comment}{//  tableN[b][c] = '0';}
+71     \textcolor{comment}{// \} else \{}
+72     \textcolor{comment}{//  tableN[b][c] = ' ';}
+73     \textcolor{comment}{// \}}
+74 \}
+\end{DoxyCode}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=192pt]{func_8h_a05759d69554b6fd2f453d6ee11a7816b_icgraph}
+\end{center}
+\end{figure}
+
+
+\subsection{Variable Documentation}
+\mbox{\Hypertarget{func_8h_adbe66a087ac3fd4a5b0566f64ca2d12b}\label{func_8h_adbe66a087ac3fd4a5b0566f64ca2d12b}} 
+\index{func.\+h@{func.\+h}!capacity@{capacity}}
+\index{capacity@{capacity}!func.\+h@{func.\+h}}
+\subsubsection{\texorpdfstring{capacity}{capacity}}
+{\footnotesize\ttfamily int capacity}
+
+\mbox{\Hypertarget{func_8h_af978b09d0f2fdfc6fd0f6f4006c71fcb}\label{func_8h_af978b09d0f2fdfc6fd0f6f4006c71fcb}} 
+\index{func.\+h@{func.\+h}!table\+\_\+N@{table\+\_\+N}}
+\index{table\+\_\+N@{table\+\_\+N}!func.\+h@{func.\+h}}
+\subsubsection{\texorpdfstring{table\+\_\+N}{table\_N}}
+{\footnotesize\ttfamily char table\+\_\+N\mbox{[}\hyperlink{func_8h_a667b04d7fb6ef46db4da4af554c5b6f7}{width}\mbox{]}\mbox{[}\hyperlink{func_8h_a17e3571785d83b356acc573fc7fbdaea}{heigh}\mbox{]}}
+
+\mbox{\Hypertarget{func_8h_a8bde76600e70fb4f2d289ab5a27c1d39}\label{func_8h_a8bde76600e70fb4f2d289ab5a27c1d39}} 
+\index{func.\+h@{func.\+h}!table\+\_\+t@{table\+\_\+t}}
+\index{table\+\_\+t@{table\+\_\+t}!func.\+h@{func.\+h}}
+\subsubsection{\texorpdfstring{table\+\_\+t}{table\_t}}
+{\footnotesize\ttfamily char table\+\_\+t\mbox{[}\hyperlink{func_8h_a667b04d7fb6ef46db4da4af554c5b6f7}{width}\mbox{]}\mbox{[}\hyperlink{func_8h_a17e3571785d83b356acc573fc7fbdaea}{heigh}\mbox{]}}
+

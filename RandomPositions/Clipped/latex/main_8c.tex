@@ -1,0 +1,155 @@
+\hypertarget{main_8c}{}\section{main.\+c File Reference}
+\label{main_8c}\index{main.\+c@{main.\+c}}
+
+
+main function  Main file of Conway\textquotesingle{}s Game Of Life project  
+
+
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$unistd.\+h$>$}\newline
+{\ttfamily \#include $<$S\+D\+L2/\+S\+D\+L.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}func.\+h\char`\"{}}\newline
+Include dependency graph for main.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{main_8c__incl}
+\end{center}
+\end{figure}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{main_8c_a51af30a60f9f02777c6396b8247e356f}{main} ()
+\begin{DoxyCompactList}\small\item\em generating tables and creating the game due to random 7 type of position which the user select \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+main function  Main file of Conway\textquotesingle{}s Game Of Life project 
+
+
+\begin{DoxyCodeInclude}
+\end{DoxyCodeInclude}
+ 
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{main_8c_a51af30a60f9f02777c6396b8247e356f}\label{main_8c_a51af30a60f9f02777c6396b8247e356f}} 
+\index{main.\+c@{main.\+c}!main@{main}}
+\index{main@{main}!main.\+c@{main.\+c}}
+\subsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily main (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+generating tables and creating the game due to random 7 type of position which the user select 
+
+Taking the capacity \begin{DoxyWarning}{Warning}
+Only range of \mbox{[}1;7\mbox{]} acceptable, otherwise it\textquotesingle{}ll ask again untill get the integer in that range
+\end{DoxyWarning}
+Generates new table
+
+\begin{DoxyWarning}{Warning}
+draft S\+DL
+\end{DoxyWarning}
+Displays the datas in the t and t+1 tables separately
+
+\begin{DoxyWarning}{Warning}
+draft S\+DL
+
+for compiling with S\+DL\+: gcc \hyperlink{game_8c}{game.\+c} \hyperlink{main_8c}{main.\+c} {\ttfamily sdl2-\/config -\/-\/cflags -\/-\/libs} -\/l\+S\+D\+L2 -\/l\+S\+D\+L2\+\_\+mixer -\/l\+S\+D\+L2\+\_\+image -\/l\+S\+D\+L2\+\_\+ttfgcc \hyperlink{game_8c}{game.\+c} \hyperlink{main_8c}{main.\+c} {\ttfamily sdl2-\/config -\/-\/cflags -\/-\/libs} -\/l\+S\+D\+L2 -\/l\+S\+D\+L2\+\_\+mixer -\/l\+S\+D\+L2\+\_\+image -\/l\+S\+D\+L2\+\_\+ttf
+\end{DoxyWarning}
+
+\begin{DoxyCode}
+18           \{
+19 \textcolor{comment}{// unsigned char copy[width * heigh];}
+20 \textcolor{comment}{//unsigned char pixels[width * heigh * 4];}
+21     \hyperlink{func_8h_adbe66a087ac3fd4a5b0566f64ca2d12b}{capacity} = 0;
+22     \textcolor{keywordtype}{char} start;
+23     srand(time(NULL));
+24 
+29     printf(\textcolor{stringliteral}{"Please, choose the starting capacity level in [1; 7] range:\(\backslash\)n"});
+30     \textcolor{keywordtype}{char} buffer[80] = \textcolor{stringliteral}{""};
+31     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i=0; i<7; i++)\{
+32         fgets(buffer, \textcolor{keyword}{sizeof}(buffer), stdin);
+33         \textcolor{keywordflow}{if} (sscanf(buffer, \textcolor{stringliteral}{"%d"}, &\hyperlink{func_8h_adbe66a087ac3fd4a5b0566f64ca2d12b}{capacity}) != 1) \{
+34             \hyperlink{func_8h_adbe66a087ac3fd4a5b0566f64ca2d12b}{capacity} = 0;
+35         \}
+36         \textcolor{keywordflow}{if} (\hyperlink{func_8h_adbe66a087ac3fd4a5b0566f64ca2d12b}{capacity} >= 1 && \hyperlink{func_8h_adbe66a087ac3fd4a5b0566f64ca2d12b}{capacity} <= 7) \{
+37             \textcolor{keywordflow}{break};
+38         \}
+39         printf(\textcolor{stringliteral}{"Please, choose the starting capacity level in [1; 7] range:\(\backslash\)n"});
+40     \}
+41     
+45     \hyperlink{func_8h_a913873cf89f388d70a28de0b77d68884}{generate}();
+46 
+50 \textcolor{comment}{// SDL\_Init(SDL\_INIT\_VIDEO);}
+51 \textcolor{comment}{// SDL\_Window *window = SDL\_CreateWindow("life", SDL\_WINDOWPOS\_UNDEFINED, SDL\_WINDOWPOS\_UNDEFINED, width,
+       heigh, SDL\_WINDOW\_SHOWN);}
+52 \textcolor{comment}{// SDL\_Renderer *renderer = SDL\_CreateRenderer(window, -1, SDL\_RENDERER\_ACCELERATED);}
+53 \textcolor{comment}{// SDL\_Texture *texture = SDL\_CreateTexture(renderer, SDL\_PIXELFORMAT\_RGBA32, SDL\_TEXTUREACCESS\_STREAMING,
+       width, heigh);}
+54 \textcolor{comment}{// SDL\_Event event;}
+55 \textcolor{comment}{// while (1) \{}
+56 \textcolor{comment}{//     if (SDL\_PollEvent(&event)) \{}
+57 \textcolor{comment}{//       if (event.type == SDL\_QUIT) \{}
+58 \textcolor{comment}{//         break;}
+59 \textcolor{comment}{//       \}}
+60 \textcolor{comment}{//     \}}
+61 
+65     \hyperlink{func_8h_a197169219893d60d8a36183dbf608f34}{display}(\hyperlink{func_8h_a8bde76600e70fb4f2d289ab5a27c1d39}{table\_t}); 
+66     printf(\textcolor{stringliteral}{"\(\backslash\)n\(\backslash\)n Type '1' to play the game.\(\backslash\)n Type '0' to exit.\(\backslash\)n"});
+67     \textcolor{comment}{// printf("\(\backslash\)033[2J");}
+68     \textcolor{keywordtype}{int} turn = 0;
+69     \textcolor{keywordtype}{int} generation;
+70     scanf(\textcolor{stringliteral}{"\(\backslash\)n%c"}, &start);
+71     \textcolor{keywordflow}{if} (start == \textcolor{charliteral}{'1'})\{
+72         \textcolor{keywordflow}{for}(generation = 0; generation < 150; generation++) \{
+73             usleep(30000);
+74             \textcolor{comment}{// printf("\(\backslash\)033[2J");}
+75             \textcolor{keywordflow}{if} (turn == 0)\{
+76                                 \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} j = 0; j < \hyperlink{func_8h_a17e3571785d83b356acc573fc7fbdaea}{heigh}; j++)\{
+77                     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < \hyperlink{func_8h_a667b04d7fb6ef46db4da4af554c5b6f7}{width}; i++)\{
+78                         \hyperlink{func_8h_a05759d69554b6fd2f453d6ee11a7816b}{rules}(i, j, \hyperlink{func_8h_a8bde76600e70fb4f2d289ab5a27c1d39}{table\_t}, \hyperlink{func_8h_af978b09d0f2fdfc6fd0f6f4006c71fcb}{table\_N});
+79                     \}
+80                 \}
+81                 \hyperlink{func_8h_a197169219893d60d8a36183dbf608f34}{display}(\hyperlink{func_8h_af978b09d0f2fdfc6fd0f6f4006c71fcb}{table\_N});
+82                 turn = 1;
+83 
+84             \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (turn == 1)\{
+85                 \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} j = 0; j < \hyperlink{func_8h_a17e3571785d83b356acc573fc7fbdaea}{heigh}; j++)\{
+86                     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < \hyperlink{func_8h_a667b04d7fb6ef46db4da4af554c5b6f7}{width}; i++)\{
+87                         \hyperlink{func_8h_a05759d69554b6fd2f453d6ee11a7816b}{rules}(i, j, \hyperlink{func_8h_af978b09d0f2fdfc6fd0f6f4006c71fcb}{table\_N}, \hyperlink{func_8h_a8bde76600e70fb4f2d289ab5a27c1d39}{table\_t});
+88                     \}
+89                 \}
+90                 \hyperlink{func_8h_a197169219893d60d8a36183dbf608f34}{display}(\hyperlink{func_8h_a8bde76600e70fb4f2d289ab5a27c1d39}{table\_t});
+91                 turn = 0;
+92             \}
+93             usleep(30000);
+94             printf(\textcolor{stringliteral}{"\(\backslash\)033[r;cH"});
+95             
+96         \}
+97     \}
+98 
+102   \textcolor{comment}{//   SDL\_UpdateTexture(texture, NULL, pixels, width * 16);}
+103   \textcolor{comment}{//   SDL\_SetRenderDrawColor(renderer, 0, 0, 0, SDL\_ALPHA\_OPAQUE);}
+104   \textcolor{comment}{//   SDL\_RenderClear(renderer);}
+105   \textcolor{comment}{//   SDL\_RenderCopy(renderer, texture, NULL, NULL);}
+106   \textcolor{comment}{//   SDL\_RenderPresent(renderer);}
+107   \textcolor{comment}{//   SDL\_Delay(5);}
+108   \textcolor{comment}{// \}}
+109   \textcolor{comment}{// SDL\_DestroyTexture(texture);}
+110   \textcolor{comment}{// SDL\_DestroyRenderer(renderer);}
+111   \textcolor{comment}{// SDL\_DestroyWindow(window);}
+112   \textcolor{comment}{// SDL\_Quit();}
+113   \textcolor{comment}{// return 0;}
+118 \textcolor{comment}{}\}
+\end{DoxyCode}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=208pt]{main_8c_a51af30a60f9f02777c6396b8247e356f_cgraph}
+\end{center}
+\end{figure}

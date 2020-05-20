@@ -4,7 +4,10 @@
 #include <stdlib.h>
 #include <stdbool.h>
 #include <time.h>
-       #include <unistd.h>
+#include <unistd.h>
+
+
+
 //#include "cut.h"
 #define MAX 5
 int getTop(int i,int j,int arr[MAX][MAX]);
